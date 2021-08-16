@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" >
+    <script src="https://unpkg.com/vue"></script>
+    <title>titulo: 'VeuJS v-for - 3',</title>
+</head>
+<body>
+    <div id="app" class="container mt-5">
+        <h1 class="header header-primary mb-5"> {{ titulo }} </h1>
+       <ul>
+            <li v-for="row in pessoas" class="alert alert-primary">{{ row.nome }} - {{ row.idade }} - {{ row.peso }}</li>
+       </ul>
+    </div>
+    
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                titulo: 'VeuJS v-for - 3',
+                pessoas : [
+                    { nome: 'Ana', idade: 26, peso: 57 },
+                    { nome: 'Beto', idade: 37, peso: 89 },
+                    { nome: 'Cris', idade: 16, peso: 42 },
+                    { nome: 'Daniel', idade: 28, peso: 68 },
+                ]
+            }
+        });
+       
+    </script>
+     <style>
+        ul{ list-style: none;}
+    </style>
+</body>
+</html>

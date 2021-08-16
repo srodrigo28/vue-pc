@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <title>02-Create Elements</title>
+</head>
+<body>
+    <div class="container" id="frm">
+        <h1>Criando elmentos - 2</h1>
+        
+        <button onclick="fn1()">Criando</button>
+    </div>
+
+    <script>
+       function fn1(){
+            var input1 = document.createElement('input')
+                input1.name = 'nome'
+            tarefa = document.getElementById('frm')
+            tarefa.insertBefore(input1, tarefa[0])
+               // document.body.appendChild(input1)
+       }
+    </script>
+</body>
+</html>

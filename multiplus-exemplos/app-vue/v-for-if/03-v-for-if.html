@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- https://www.youtube.com/watch?v=mbJh9jrc_20&list=PLcoYAcR89n-qq1vGRbaUiV6Q9puy0qigW&index=3 -->
+<!-- Aqui vamos ver o v-if -->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <script src="https://unpkg.com/vue"></script>
+    <title>Aula-02</title>
+</head>
+<body>
+    <div id="app" class="container">
+        <h1 >{{ titulo }}</h1>
+        
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            
+            data: {
+                titulo: "03-v-for-if",
+               
+            }
+        });
+    </script>
+</body>
+</html>

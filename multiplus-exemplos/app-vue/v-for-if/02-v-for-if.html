@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- https://www.youtube.com/watch?v=mbJh9jrc_20&list=PLcoYAcR89n-qq1vGRbaUiV6Q9puy0qigW&index=3 -->
+<!-- Aqui vamos ver o v-if -->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <script src="https://unpkg.com/vue"></script>
+    
+</head>
+<body>
+    <div id="app" class="container">
+        <title>{{ titulo }}</title>
+        <h1 >{{ titulo }}</h1>
+        <table border="1">
+            <thead>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Tipo</th>
+                <th>Nivel</th>
+            </thead>
+            <tbody v-for=" row in pokemon">
+                <tr v-if="row.nivel == '5'">
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.nome }}</td>
+                    <td>{{ row.tipo }}</td>
+                    <td>{{ row.nivel }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            
+            data: {
+                titulo: "02-v-for-if ***",
+                pokemon:[
+                    {id: 1, nome: 'charmander', tipo: 'fogo', nivel: 5},
+                    {id: 1, nome: 'charmeleon', tipo: 'fogo', nivel: 18},
+                    {id: 1, nome: 'charizard', tipo: 'fogo', nivel: 38},
+                    {id: 2, nome: 'pikachu', tipo: 'elétrico', nivel: 5},
+                    {id: 3, nome: 'bubasaur', tipo: 'grama', nivel: 5},
+                ],
+                treinador:[
+                    { id: 1, nome: 'bastiao', [ { nome: 'charmander'}, { nome: 'charmander'} ] }
+                ],
+               
+            }
+        });
+    </script>
+</body>
+</html>

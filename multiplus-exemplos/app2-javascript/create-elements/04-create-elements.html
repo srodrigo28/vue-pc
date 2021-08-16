@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <title>01-Create Elements</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Criando elmentos</h1>
+        <div id="frm">
+
+        </div>
+        <button onclick="criaElements1()">Criando</button>
+    </div>
+
+    <script>
+        criaElements = () => {
+
+        }
+        function criaElements1(){
+            // Cria Formulario
+            let form = document.createElement('form')
+                form.action = '#'
+                form.name = 'frm_login'
+                form.className = 'mt-5'
+
+            // Cria input de nome
+            let input1 = document.createElement('input')
+                input1.type = 'text'
+                input1.className = 'form-control mb-3'
+                input1.name = 'nome'
+                input1.placeholder = 'Seu nome'
+            
+            // Cria input de Senha
+            let input2 = document.createElement('input')
+                input2.type = 'password'
+                input2.className = 'form-control mb-3'
+                input2.name = 'senha'
+                input2.placeholder = '******************'
+            
+            // Cria Botão para Entrar
+            let button = document.createElement('button')
+                button.type = 'submit'
+                button.className = 'btn btn-info mb-3'
+                button.innerHTML = 'Entrar'
+
+            // Insere dentro do formulario
+            form.appendChild(input1)
+            form.appendChild(input2)
+            form.appendChild(button)
+
+            tarefa = document.getElementById('frm')
+            tarefa.insertBefore(form, tarefa[0])
+        }
+    </script>
+</body>
+</html>

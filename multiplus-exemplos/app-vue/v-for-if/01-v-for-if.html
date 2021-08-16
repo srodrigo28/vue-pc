@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- https://www.youtube.com/watch?v=mbJh9jrc_20&list=PLcoYAcR89n-qq1vGRbaUiV6Q9puy0qigW&index=3 -->
+<!-- Aqui vamos ver o v-if -->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <script src="https://unpkg.com/vue"></script>
+    <title>Aula-02</title>
+</head>
+<body>
+    <div id="app" class="container">
+        <h1 >{{ titulo }}</h1>
+        <input type="text" placeholder="pesquisar trabalhador" class="form-control">
+        <div v-for="item in usuario" >
+            <p  v-if="item.login == 'admin' ">
+                Id: {{ item.id }} <br>
+                Nome: {{ item.nome }} <br>
+                Profissao: {{ item.profissao }}<br>
+                Salario: {{ item.salario }}
+            </p>
+        </div>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            
+            data: {
+                titulo: "Aula VueJS do jeito ninja!",
+                usuario:[
+                    { id: 1, login:'admin', nome: "Jon Snow", profissao: "Ator", salario: 'R$ 2.000' },
+                    { id: 2, login:'cliente', nome: "Muel Edson",profissao: "Dev", salario: 'R$ 1.000' },
+                    { id: 3, login:'admin', nome: "Valentina Sousa",profissao: "Dev-Junior", salario: 'R$ 500' },
+                    { id: 4, login:'cliente', nome: "Bastião",profissao: "Dev Master", salario: 'R$ 5.000' }
+                ]
+            }
+        });
+    </script>
+</body>
+</html>

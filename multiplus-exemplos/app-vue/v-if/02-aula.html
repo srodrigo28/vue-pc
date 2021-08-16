@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- https://www.youtube.com/watch?v=mbJh9jrc_20&list=PLcoYAcR89n-qq1vGRbaUiV6Q9puy0qigW&index=3 -->
+<!-- Aqui vamos ver o v-if -->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue"></script>
+    <title>Aula-02</title>
+</head>
+<body>
+
+    <div id="app">
+        <h1 >{{ titulo }}</h1>
+        <div v-if="usuario.id == 1">
+            Id: {{ usuario.id }} <br>
+            Nome: {{ usuario.nome }} <br>
+            Profissao: {{ usuario.profissao }}
+        </div>
+    </div>
+    
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                titulo: "Aula VueJS do jeito ninja!",
+                usuario:{
+                    id: 1,
+                    nome: "Jon Snow",
+                    profissao: "Ator",
+                }
+                
+            }
+        });
+    </script>
+</body>
+</html>
