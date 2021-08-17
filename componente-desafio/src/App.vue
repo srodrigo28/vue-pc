@@ -1,26 +1,68 @@
 <template>
   <v-app>
-    <app-menu />
-    <app-toolbar />
-    <v-main>
-      <app-carrosel />
-    </v-main>
-    <app-footer />
+    <v-navigation-drawer app>
+      <v-toolbar flat>
+        <v-list>
+          <v-list-tile>
+            <v-list-tile-title class="title">
+                Menu
+            </v-list-tile-title>
+          </v-list-tile>
+        </v-list>
+      </v-toolbar>
+
+      <v-divider></v-divider>
+
+      <v-list dense class="pt-0">
+        <v-list-item v-for="item in itensMenu" :key="item.titulo">
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>{{ item.titulo }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-app-bar app>
+        <v-toolbar-title class="headline text-uppercase">
+				<span>Desafio</span>
+				<span class="font-weight-light">Componente</span>
+        </v-toolbar-title>
+    </v-app-bar>
+
+    <v-content>
+      <v-carousel>
+        <v-carousel-item
+            v-for="(item,i) in fotos"
+            :key="i"
+            :src="item.src"></v-carousel-item>
+      </v-carousel>
+    </v-content>
+
+    <v-footer class="pa-3" app>
+      <v-spacer></v-spacer>
+      <div>Curso Vue &copy; {{ new Date().getFullYear() }}</div>
+    </v-footer>
   </v-app>
 </template>
 
 <script>
-import Toolbar from './components/Toolbar.vue'
-import Menu from './components/Menu.vue'
-import Carrosel from './components/Carrosel.vue'
-import Footer from './components/Footer.vue'
 export default {
-  components:{
-    'app-toolbar': Toolbar,
-    'app-menu': Menu,
-    'app-carrosel': Carrosel,
-    'app-footer': Footer
-  },
+  data() {
+    return {
+      itensMenu: [
+        {titulo: 'Início', icon: 'mdi-view-dashboard'},
+        {titulo: 'Sobre', icon: 'mdi-forum'}
+      ],
+      fotos: [
+        {src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg'},
+        {src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'},
+        {src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'},
+        {src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'}
+      ]
+    }
+  }
 }
-
 </script>
